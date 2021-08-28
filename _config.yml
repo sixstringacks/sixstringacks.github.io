@@ -1,0 +1,55 @@
+title:            sixstringacks
+tagline:          'Blog'
+description:      'CTF | Automation | Cloud | Security'
+url:              "https://sixstringacks.github.io"
+baseurl:          ""
+                  # the optional subpath of your site, e.g. "/blog"
+                  # NB: This applies to all pages in your Jekyll site.
+                  # If you want to move just the blog index pages but keep
+                  # other pages at root, see the paginate_path and
+                  # sidebar_blog_link below.
+name:               'sixstringacks'
+twitter_username:   'sixstringacks'
+github_username:    'sixstringacks'
+repo:               'https://github.com/sixstringacks'
+remote_theme:       fongandrew/hydeout
+#theme:              jekyll-theme-hydeout
+paginate:           5
+sidebar_home_link:  true
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
+defaults:
+  -
+    scope:
+      path: "writeups"
+    values:
+        layout: "page"
+        type: writeup
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

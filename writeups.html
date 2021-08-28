@@ -1,0 +1,34 @@
+---
+title: writeups
+layout: page
+sidebar_link: true
+---
+
+Various writeups for HTB boxes
+<br>
+
+<br>
+<b> Windows </b><br><br>
+{% for page in site.pages %}
+    {% if page.type == 'writeup' and page.title != 'writeups' and page.tags == 'windows' %}
+    <li><a href={{ page.url }}>{{ page.title }}</a><br></li>
+    {% endif %}
+{% endfor %}
+<br>
+
+<b> Linux </b><br><br>
+{% for page in site.pages %}
+    {% if page.type == 'writeup' and page.title != 'writeups' and page.tags == 'linux' %}
+    <li><a href={{ page.url }}>{{ page.title }}</a><br></li>
+    {% endif %}
+{% endfor %}
+<br>
+
+<b> Other </b><br><br>
+{% for page in site.pages %}
+    {% if page.type == 'writeup' and page.title != 'writeups' and page.tags == 'other' %}
+    <li><a href={{ page.url }}>{{ page.title }}</a><br></li>
+    {% endif %}
+{% endfor %}
+<br>
+
