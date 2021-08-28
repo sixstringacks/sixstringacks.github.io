@@ -85,7 +85,7 @@ john --format=md5crypt --fork=4 --wordlist=/usr/share/wordlists/rockyou.txt cisc
 
 I tried a few different combinations with smbclient and found one that was able to authenticate, hazard:stealth1agent, but this account didn't have access to any of the shares. I also tried that username/password combination with WinRM with no success.
 
-![2021-08-22_20-01.png](ssets/2021-08-22_20-01.png)
+![2021-08-22_20-01.png](assets/2021-08-22_20-01.png)
 
 I decided to use impacket's lookupsid to see if I could enumerate any other accounts and I found quite a fiew. 
 
