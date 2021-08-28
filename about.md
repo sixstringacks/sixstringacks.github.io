@@ -5,7 +5,7 @@ sidebar_link: True
 permalink: /about/
 ---
 
-<center><img title="" src="/assets/sixstringackscr.png" alt="loading-ag-1450" width="171"></center>
+<center><img title="" src="/assets/images/sixstringackscr.png" alt="loading-ag-1450" width="171"></center>
 <b><center> Guitarist, Hacker, Perpetual Learner</center></b>
 
 If you can’t explain a concept to someone else, you don’t really know it. I created this site to help cement what I’ve learned and share knowledge with others.
