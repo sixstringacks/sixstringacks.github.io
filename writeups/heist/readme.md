@@ -93,7 +93,7 @@ I decided to use impacket's lookupsid to see if I could enumerate any other acco
 
 I copied all the new usernames into user.txt, the existing cisco passwords into pass.txt, and used them with CrackMapExec to try different combinations against WinRM. I got a hit on chase's account with the enable secret password. chase:Q4)sJu\Y8qz*A3?d
 
-![2021-08-25_14-25_1.png](assets/2021-08-25_14-25_1.png])
+![2021-08-25_14-25_1.png](assets/2021-08-25_14-25_1.png)
 
 I was then able to use the credentials with evil-winrm to get a shell and the user flag.
 
