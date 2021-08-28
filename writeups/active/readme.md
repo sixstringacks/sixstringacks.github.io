@@ -41,7 +41,7 @@ nmap -vv --reason -Pn -sT -A --osscan-guess -p- -oN results/10.10.10.100/scans/_
 smbmap -H 10.10.10.100
 ```
 
-![2021-08-28_19-23.png](/home/sixstringacks/share/git/tmp_assets/f94ee236a32ffd0f97af53b4e118334dda7258a3.png)
+![2021-08-28_19-23.png](assets/2021-08-28_19-23.png)
 
 ## Steps (User)
 
@@ -70,7 +70,7 @@ I came across a file called Groups.xml, which are used by Group Policy Preferenc
 
 These settings are stored as an XML in the SYSVOL (or in this case the Replication) folder. I remember hearing about this and how the decryption key was stored one of Microsoft's own [sites](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be?redirectedfrom=MSDN).
 
-![2021-08-28_19-33.png](/home/sixstringacks/share/git/tmp_assets/02dc79677b1c576749252adf51e64fde152e89a2.png)
+![2021-08-28_19-33.png](assets/2021-08-28_19-33.png)
 
 I did a search and found a tool called [GPP-Decrypt](https://github.com/t0thkr1s/gpp-decrypt.git) that decrypts GPP files. It worked as advertised and provided the decrypted password. active.htb/SVC_TGS:GPPstillStandingStrong2k18
 
@@ -86,7 +86,7 @@ At this point I had a valid username and password, and I felt like the name of t
 GetUserSPNs.py active.htb/svc_tgs:GPPstillStandingStrong2k18 -outputfile active.kerberoast
 ```
 
-![2021-08-20_07-40.png](/home/sixstringacks/share/git/tmp_assets/f3b04e583f6b5c0fdbdba957548d27c77213e224.png)
+![2021-08-20_07-40.png](assets/2021-08-20_07-40.png)
 
 > Note: As you can see in the screenshot above, I received an error when running GetUserSPNs.py about clock skew being too great. Kerberos will throw errors if the two clocks are more than 5 minutes apart and this can generally cause problems when trying to use Kerberos. This can be fixed by running the command ntpupdate [target] to get the two clocks in sync. In the case of GetUserSPNs.py it was inconsequential as it was able to spit out the SPN anyway. 
 
@@ -94,7 +94,7 @@ How this all works is pretty complicated. Because the administrator account is c
 
 *Shown below are the attributes for the administrator account with servicePrincipalName highlighted*
 
-<img src="file:///home/sixstringacks/share/git/tmp_assets/720ffe871b8570c0fa0f89e56640349debe4ad19.png" title="" alt="2021-08-20_08-07.png" width="264">
+<img src="assets/2021-08-20_08-07.png" title="" alt="2021-08-20_08-07.png" width="264">
 
 I copied the active.kerberoast that was output from GetUserSPNs to my physical box and was able to crack it with hashcat. administrator:Ticketmaster1968
 
