@@ -8,15 +8,20 @@ baseurl:          ""
                   # If you want to move just the blog index pages but keep
                   # other pages at root, see the paginate_path and
                   # sidebar_blog_link below.
+author:             'sixstringacks'
 name:               'sixstringacks'
 twitter_username:   'sixstringacks'
 github_username:    'sixstringacks'
 repo:               'https://github.com/sixstringacks'
+lang:               en_us
+timezone:           America/Detroit
 remote_theme:       fongandrew/hydeout
 #theme:              jekyll-theme-hydeout
 paginate:           5
 sidebar_home_link:  true
 markdown: kramdown
+enable_disquis: false
+enable_commento: false
 
 plugins:
   - jekyll-feed
@@ -33,6 +38,7 @@ defaults:
     values:
         layout: "page"
         type: writeup
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
