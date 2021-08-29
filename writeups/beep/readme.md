@@ -1,6 +1,7 @@
 ---
 title: Beep
 tags: linux
+description: Write-up for Hack the Box - Beep
 ---
 
 ![image](assets/79369615-3f3e9080-7f1f-11ea-998c-bb9c44346f31.png)

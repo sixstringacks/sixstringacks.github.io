@@ -1,6 +1,7 @@
 ---
 title: Help
 tags: linux
+description: Write-up for Hack the Box - Help
 ---
 
 ![image](assets/79370689-1ddea400-7f21-11ea-9891-c8d29a592923.png)

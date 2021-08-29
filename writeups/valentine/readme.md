@@ -1,6 +1,7 @@
 ---
 title: Valentine
 tags: linux
+description: Write-up for Hack the Box - Valentine
 ---
 
 ![image](assets/79379414-e83fb800-7f2c-11ea-9e63-a5575e0d52ce.png)

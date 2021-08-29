@@ -1,6 +1,7 @@
 ---
 title: Lame
 tags: linux
+description: Write-up for Hack the Box - Lame
 ---
 
 ![image](assets/79371199-f89e6580-7f21-11ea-8c03-537738c623e5.png)

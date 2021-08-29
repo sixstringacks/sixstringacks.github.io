@@ -1,6 +1,7 @@
 ---
 title: Kotarak
 tags: linux
+description: Write-up for Hack the Box - Kortarak
 ---
 
 ![image](assets/79371113-d7d61000-7f21-11ea-8260-bc4ab1d7db1a.png)

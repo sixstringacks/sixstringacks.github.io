@@ -1,6 +1,7 @@
 ---
 title: Poison
 tags: other
+description: Write-up for Hack the Box - Poison
 ---
 
 ![image](assets/79376001-8466c080-7f27-11ea-884e-53a44f90236f.png)
@@ -133,6 +134,7 @@ ps auxww | grep root
 Xvnc :1 -desktop X -httpd /usr/local/share/tightvnc/classes -auth /root/.Xauthority -geometry 1280x800 -depth 24 -rfbwait 120000 -rfbauth /root/.vnc/passwd -rfbport 5901 -localhost -nolisten tcp :1
 ```
 
+```
 Command Breakdown: 
 | command| description |
 |--------|-------------|
@@ -145,6 +147,7 @@ Command Breakdown:
 | -rfbport | specifies the TCP port on which Xvnc listens for connections from viewers (the protocol used in VNC is called RFB - "remote framebuffer").|
 | -localhost | only allow connections from the same machine |
 | -nolisten | dont listen on protocol |
+```
 
 In order to connect to vnc on the remote box I had to set up a local port forward. Because the -localhost parameter is set xvnc will only allow connections from the same machine. To get around this I forwarded the port through ssh to my box where I could connect to it.
 

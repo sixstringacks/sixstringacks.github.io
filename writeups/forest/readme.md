@@ -1,6 +1,7 @@
 ---
 title: Forest
 tags: windows
+description: Write-up for Hack the Box - Forest
 ---
 
 ![image](assets/79370185-3dc19800-7f20-11ea-8943-3a6938877b6e.png)

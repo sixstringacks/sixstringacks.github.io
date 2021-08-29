@@ -1,6 +1,7 @@
 ---
 title: Node
 tags: linux
+description: Write-up for Hack the Box - Node
 ---
 
 ![image](assets/79375251-592fa180-7f26-11ea-86e7-a1d6e46ed5bc.png)

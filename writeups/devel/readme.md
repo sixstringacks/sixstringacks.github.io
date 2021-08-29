@@ -1,6 +1,7 @@
 ---
 title: Devel
 tags: windows
+description: Write-up for Hack the Box - Devel
 ---
 
 ![image](assets/79370040-fcc98380-7f1f-11ea-8333-a85c36c3d15f.png)

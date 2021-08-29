@@ -1,6 +1,7 @@
 ---
 title: DevOops
 tags: linux
+description: Write-up for Hack the Box - Devoops
 ---
 
 ![image](assets/79370115-1d91d900-7f20-11ea-8823-4678d93e0034.png)

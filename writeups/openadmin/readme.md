@@ -1,6 +1,7 @@
 ---
 title: OpenAdmin
 tags: linux
+description: Write-up for Hack the Box - OpenAdmin
 ---
 
 ![image](assets/83579642-d2e81280-a507-11ea-80f3-62eaf5fec9b8.png)

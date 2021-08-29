@@ -1,6 +1,7 @@
 ---
 title: Bashed
 tags: linux
+description: Write-up for Hack the Box - Bashed
 ---
 
 ![image](assets/79369383-d8b97280-7f1e-11ea-95e8-354f14929c25.png)

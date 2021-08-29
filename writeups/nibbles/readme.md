@@ -1,6 +1,7 @@
 ---
 title: Nibbles
 tags: linux
+description: Write-up for Hack the Box - Nibbles
 ---
 
 ![image](assets/79372160-96defb00-7f23-11ea-8f04-4958f27e7e60.png)

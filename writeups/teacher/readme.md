@@ -1,6 +1,7 @@
 ---
 title: Teacher
 tags: linux
+description: Write-up for Hack the Box - Teacher
 ---
 
 ![image](assets/79379168-723b5100-7f2c-11ea-8a8b-97b160e7a5c8.png)

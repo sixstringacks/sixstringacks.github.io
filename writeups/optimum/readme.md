@@ -1,6 +1,7 @@
 ---
 title: Optimum
 tags: windows
+description: Write-up for Hack the Box - Optimum
 ---
 
 ![image](assets/79375859-4e294100-7f27-11ea-99b2-7edafa05220c.png)

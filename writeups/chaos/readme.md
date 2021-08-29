@@ -1,6 +1,7 @@
 ---
 title: Chaos
 tags: linux
+description: Write-up for Hack the Box - Chaos
 ---
 
 ![image](assets/79369877-ae1be980-7f1f-11ea-8d51-31cbd8452657.png)

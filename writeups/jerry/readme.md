@@ -1,6 +1,7 @@
 ---
 title: Jerry
 tags: windows
+description: Write-up for Hack the Box - Jerry
 ---
 
 ![image](assets/79371021-ad845280-7f21-11ea-86cf-e5a626dd47d1.png)

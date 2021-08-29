@@ -1,7 +1,7 @@
 ---
 title: Access
-permalink: /access/
 tags: windows
+description: Write-up for Hack the Box - Access
 ---
 
 ![2021-08-15_20-19.png](assets/2021-08-15_20-19.png)

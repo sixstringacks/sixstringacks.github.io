@@ -1,6 +1,7 @@
 ---
 title: Resolute
 tags: windows
+description: Write-up for Hack the Box - Resolute
 ---
 
 ![image](assets/84849979-87b02280-b024-11ea-81b2-f2a9d8953592.png)

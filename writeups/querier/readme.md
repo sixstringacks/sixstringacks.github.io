@@ -1,6 +1,7 @@
 ---
 title: Querier
 tags: windows
+description: Write-up for Hack the Box - Querier
 ---
 ![image](assets/79376459-3605f180-7f28-11ea-88b3-5fe00f9322c2.png)
 

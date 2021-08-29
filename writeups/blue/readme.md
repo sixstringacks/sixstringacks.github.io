@@ -1,6 +1,7 @@
 ---
 title: Blue
 tags: windows
+description: Write-up for Hack the Box - Blue
 ---
 
 ![image](assets/79369688-5e3d2280-7f1f-11ea-9975-eaf1c4591c5c.png)

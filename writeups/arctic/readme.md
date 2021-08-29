@@ -1,6 +1,7 @@
 ---
 title: Arctic
 tags: windows
+description: Write-up for Hack the Box - Arctic
 ---
 
 ![image](assets/79369276-b1fb3c00-7f1e-11ea-94ee-c1afe128f2a3.png)

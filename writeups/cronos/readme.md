@@ -1,6 +1,7 @@
 ---
 title: Cronos
 tags: linux
+description: Write-up for Hack the Box - Cronos
 ---
 
 ![image](assets/79369967-d6a3e380-7f1f-11ea-95c4-5bcb116f5c27.png)

@@ -1,6 +1,7 @@
 ---
 title: Granny
 tags: windows
+description: Write-up for Hack the Box - Granny
 ---
 
 ![image](assets/79370331-795c6200-7f20-11ea-894b-9e65b9ef47a0.png)

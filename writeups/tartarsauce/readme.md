@@ -1,6 +1,7 @@
 ---
 title: TarTarSauce
 tags: linux
+description: Write-up for Hack the Box - TarTarSauce
 ---
 
 ![image](assets/79378906-1a9ce580-7f2c-11ea-8100-a797c2a4fde9.png)

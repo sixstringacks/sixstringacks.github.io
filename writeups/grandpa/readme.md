@@ -1,6 +1,7 @@
 ---
 title: Grandpa
 tags: windows
+description: Write-up for Hack the Box - Grandpa
 ---
 
 ![image](assets/79370442-a872d380-7f20-11ea-9bee-96540fa480e8.png)

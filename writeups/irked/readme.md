@@ -1,6 +1,7 @@
 ---
 title: Irked
 tags: linux
+description: Write-up for Hack the Box - Irked
 ---
 
 ![image](assets/79370935-83cb2b80-7f21-11ea-8294-37f5d3dd9c72.png)

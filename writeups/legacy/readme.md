@@ -1,6 +1,7 @@
 ---
 title: Legacy
 tags: windows
+description: Write-up for Hack the Box - Legacy
 ---
 
 ![image](assets/79371281-1f5c9c00-7f22-11ea-957d-45c0a5eb8a97.png)

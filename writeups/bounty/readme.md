@@ -1,6 +1,7 @@
 ---
 title: Bounty
 tags: windows
+description: Write-up for Hack the Box - Bounty
 ---
 
 ![image](assets/79369796-888ee000-7f1f-11ea-9fb0-30af4d5aff32.png)

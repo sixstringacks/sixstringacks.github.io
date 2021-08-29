@@ -1,6 +1,7 @@
 ---
 title: Shocker
 tags: linux
+description: Write-up for Hack the Box - Shocker
 ---
 
 ![image](assets/79377933-77979c00-7f2a-11ea-8b23-43eefc2f2249.png)

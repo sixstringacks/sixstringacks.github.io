@@ -1,6 +1,7 @@
 ---
 title: Toolbox
 tags: windows
+description: Write-up for Hack the Box - Toolbox
 ---
 
 ![2021-08-22_09-10.png](assets/2021-08-22_09-10.png)

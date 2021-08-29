@@ -1,6 +1,7 @@
 ---
 title: Active
 tags: windows
+description: Write-up for Hack the Box - Active
 ---
 
 ![2021-08-17_07-24.png](assets/2021-08-17_07-24.png)

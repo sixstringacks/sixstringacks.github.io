@@ -1,6 +1,7 @@
 ---
 title: Bastard
 tags: windows
+description: Write-up for Hack the Box - Bastard
 ---
 
 ![image](assets/79369485-07cfe400-7f1f-11ea-905d-414b9b137c70.png)

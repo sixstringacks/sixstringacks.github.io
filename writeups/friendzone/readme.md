@@ -1,6 +1,7 @@
 ---
 title: FriendZone
 tags: linux
+description: Write-up for Hack the Box - FriendZone
 ---
 
 ![image](assets/79370277-5e89ed80-7f20-11ea-84fb-b40c47481a9d.png)

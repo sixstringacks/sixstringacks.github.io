@@ -1,6 +1,7 @@
 ---
 title: Nineveh
 tags: linux
+description: Write-up for Hack the Box - Nineveh
 ---
 
 ![image](assets/79372245-b5dd8d00-7f23-11ea-9b40-96743d237df8.png)

@@ -1,6 +1,7 @@
 ---
 title: Bastion
 tags: windows
+description: Write-up for Hack the Box - Bastion
 ---
 
 ![2021-08-15_20-18.png](assets/2021-08-15_20-18.png)
