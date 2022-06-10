@@ -1,10 +1,10 @@
 ---
 title: Blackfield
-tags: Windows
+tags: windows
 description: Write-up for Hack the Box - Blackfield
 ---
 
-<img src="/home/rp/share/git/sixstringacks.github.io/_drafts/Blackfield/assets/Blackfield.png" style="zoom: 33%;" />
+<img src="assets/Blackfield.png" style="zoom: 33%;" />
 
 ## Overview
 
